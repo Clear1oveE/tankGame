@@ -9,6 +9,7 @@ public class Tank {
     private int y;
     private Direction dir;
     private int speed = 1;
+    boolean isLive = true;
 
     public Tank(int x, int y,Direction dir) {
         this.x = x;
@@ -16,17 +17,29 @@ public class Tank {
         this.dir = dir;
     }
     public void moveUp(){
-        y-=speed;
+        if(y>=0){
+            y-=speed;
+        }
+
     }
     public void moveDown(){
-        y+=speed;
+        if(y<=650){
+            y+=speed;
+        }
+
     }
 
     public void moveLeft(){
-        x-=speed;
+        if(x>0){
+            x-=speed;
+        }
+
     }
     public void moveRight(){
-        x+=speed;
+        if(x<940){
+            x+=speed;
+        }
+
     }
 
     public int getSpeed() {

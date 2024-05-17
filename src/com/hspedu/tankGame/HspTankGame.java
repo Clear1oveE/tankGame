@@ -13,7 +13,10 @@ public class HspTankGame extends JFrame {
         HspTankGame hspTankGame = new HspTankGame();
     }
     public HspTankGame(){
+
         mp = new MyPanel();
+        Thread thread = new Thread(mp);
+        thread.start();
         this.add(mp);
         this.setSize(1000,750);
         this.addKeyListener(mp);
